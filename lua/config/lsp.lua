@@ -24,4 +24,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 
-vim.lsp.enable({ "pyright", "lua_ls", "ruff", "clangd", "rust-analyzer"})
+vim.lsp.enable({ "pyright", "lua_ls", "ruff", "clangd", "rust-analyzer", "yamlls"})
