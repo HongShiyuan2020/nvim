@@ -5,7 +5,12 @@ vim.keymap.del("n", "grr")
 vim.keymap.del("n", "gri")
 vim.keymap.del("n", "gO")
 
+
+
 -- Create keymapping
+
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show current lsp error float pannel.' })
+
 -- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function (args)
@@ -22,6 +27,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end, bufopts)
     end
 })
+
 
 
 vim.lsp.enable({ "pyright", "lua_ls", "ruff", "clangd", "rust-analyzer", "yamlls"})
