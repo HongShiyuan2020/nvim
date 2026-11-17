@@ -11,6 +11,7 @@ vim.keymap.del("n", "gO")
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show current lsp error float pannel.' })
 
+
 -- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function (args)
@@ -25,6 +26,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         keymap.set("n", "<space>f", function()
             vim.lsp.buf.format({ async = true })
         end, bufopts)
+        keymap.set({"n", "v"}, "<leader>ca", lsp.buf.code_action, bufopts)
     end
 })
 
